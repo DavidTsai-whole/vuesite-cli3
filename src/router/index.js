@@ -1,27 +1,90 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
 
 Vue.use(VueRouter)
 
-const routes = [
-  {
-    path: '/',
-    name: 'Home',
-    component: Home
-  },
-  {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  }
-]
+export default new VueRouter({
+  routes: [
+    {
+      path: '*',
+      redirect: '/'
+    },
+    {
+      path: '/',
+      component: () => import('../views/Layout.vue'),
+      children: [
+        {
+          path: '',
+          component: () => import('../views/Home.vue')
+        },
+        {
+          path: 'login',
+          name: 'login',
+          component: () => import('../views/Login.vue')
+        },
+        {
+          path: 'product',
+          name: 'product',
+          component: () => import('../views/CustomerProduct.vue')
+        },
+        {
+          path: 'products/:id',
+          name: 'products',
+          component: () => import('../views/ProductDetail.vue')
+        },
+        {
+          path: 'cart',
+          name: 'cart',
+          component: () => import('../views/Cart.vue')
+        },
+        {
+          path: 'checkout',
+          name: 'checkout',
+          component: () => import('../views/Checkout.vue')
+        },
+        {
+          path: 'checkoutFinal/:id',
+          name: 'checkoutFinal',
+          component: () => import('../views/FinalCheckout.vue')
+        },
+        {
+          path: 'track',
+          name: 'track',
+          component: () => import('../views/Track.vue')
+        },
+        {
+          path: 'question',
+          name: 'question',
+          component: () => import('../views/Question.vue')
+        },
+        {
+          path: 'thx',
+          name: 'thx',
+          component: () => import('../views/Thx')
+        }
+      ]
 
-const router = new VueRouter({
-  routes
+    },
+    {
+      path: '/admin',
+      component: () => import('../views/Dashboard.vue'),
+      meta: { requiresAuth: true },
+      children: [
+        {
+          path: 'product',
+          name: 'Editproduct',
+          component: () => import('../views/EditProduct.vue'),
+          meta: { requiresAuth: true }
+        },
+        {
+          path: 'coupon',
+          name: 'coupon',
+          component: () => import('../views/Coupon.vue'),
+          meta: { requiresAuth: true }
+        }
+      ]
+    }
+
+  ]
+
 })
-
-export default router
