@@ -41,7 +41,7 @@
           <div class="mt-5">
             <button class="backMenuBtn btn btn-outline-secondary" @click="gomenu">
               回菜單
-            </button>
+            </button>&nbsp;
             <button class="addCartBtn btn btn-dark1" @click="addcart(singleProduct)">
               加入購物車
             </button>

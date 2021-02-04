@@ -47,6 +47,10 @@ export default {
       cartData: JSON.parse(localStorage.getItem('cartData')) || [],
       cartnum: 0
     }
+  },
+  created () {
+    const myCookie = document.cookie.replace(/(?:(?:^|.*;\s*)vueToken\s*=\s*([^;]*).*$)|^.*$/, '$1')
+    this.$http.defaults.headers.common.Authorization = myCookie
   }
 }
 </script>

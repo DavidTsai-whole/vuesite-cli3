@@ -91,6 +91,9 @@ export default {
       const api = `${process.env.VUE_APP_APIPATH}/admin/signin`
       vm.$http.post(api, vm.user).then((response) => {
         if (response.data.success) {
+          const token = response.data.token
+          const expired = response.data.expired
+          document.cookie = `vueToken=${token}; expires=${new Date(expired)};`
           vm.$router.push('/admin/product')
         } else {
           vm.$bus.$emit('message:push', '登入失敗', 'danger')

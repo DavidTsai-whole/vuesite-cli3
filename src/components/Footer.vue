@@ -22,8 +22,7 @@
 
 <style>
 .footer {
-  position: relative;
-  height: 220px;
+  margin-top:80px;
 }
 .footer h2 {
   color: #dcd9cb;

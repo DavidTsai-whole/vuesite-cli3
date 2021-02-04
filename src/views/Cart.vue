@@ -292,7 +292,7 @@ export default {
     goCheckout () {
       const vm = this
       vm.isLoading = true
-      const api = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_MEIPATH}/cart`
+      const api = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_MEPATH}/cart`
       vm.cartData.forEach((item) => {
         const cartParameter = {
           product_id: item.product_id,

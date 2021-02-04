@@ -1,7 +1,7 @@
 <template>
   <div>
     <loading :active.sync="isLoading"></loading>
-    <CartLogo></CartLogo>
+  <CartLogo></CartLogo>
     <div class="container mb-5">
       <div class="row justify-content-center">
         <div class="col-md-8">
@@ -31,7 +31,7 @@
             </div>
             <div
               class="text-center"
-              v-if="allcart.total >= 1000 && allcart.total === 0"
+              v-else
             >
               <h4 class="font-weight-bold">
                 消費總金額
@@ -61,7 +61,7 @@
                 />
                 <div class="input-group-append">
                   <button
-                    class="btn btn-dark1 btn-sm"
+                    class="btn btn-dark1"
                     v-if="allcart.total !== 0"
                     type="button"
                     id="button-addon2"
@@ -233,7 +233,7 @@
                   <span class="invalid-feedback">{{ errors[0] }}</span>
                 </validation-provider>
 
-                <validation-provider class="form-group" v-slot="{ errors}">
+                <validation-provider class="form-group" v-slot="{ errors, }">
                   <!-- 輸入框 -->
                   <label for="comment"
                     >留言<span class="text-success">(選填)</span></label
@@ -287,6 +287,10 @@
 .checkBorder {
   border-bottom: 1px solid #e0e0e0;
 }
+.checkImg {
+  height: 70px;
+  width: 70px;
+}
 .topLogo1 {
   font-size: 25px;
   height: 60px;
@@ -306,10 +310,6 @@
 .fa-arrow-right {
   font-size: 50px;
   padding-top: 7px;
-}
-.checkImg {
-  height: 70px;
-  width: 70px;
 }
 .totalTitle {
   cursor: pointer;
@@ -331,11 +331,6 @@
   .fa-arrow-right {
     font-size: 30px;
     padding-top: 17px;
-  }
-}
-@media(max-width:567px){
-  .inputCoupon{
-    font-size:15px;
   }
 }
 </style>

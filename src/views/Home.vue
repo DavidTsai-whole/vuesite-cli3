@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 <template>
   <div>
     <CartLogo></CartLogo>
@@ -8,7 +9,7 @@
           <h1>全台最正宗的美式餐廳，你不可錯過的唯一選擇。</h1>
             <button class="btn btn-outline-dark1 btn-sm" @click="openModal">
               查看優惠
-            </button>
+            </button>&nbsp;
             <button class="btn btn-dark1 btn-sm" @click="goProdut">來去逛逛</button>
         </div>
       </div>
@@ -234,6 +235,9 @@
   line-height: 1.8;
   font-size: 15px;
 }
+.fa-copy:hover {
+  cursor:pointer;
+}
 .circle {
   border-radius: 50%;
   height: 300px;
@@ -358,8 +362,12 @@
 }
 </style>
 <script>
+// eslint-disable-next-line no-new
 import $ from 'jquery'
 import CartLogo from '@/components/CartLogo'
+// eslint-disable-next-line
+new ClipboardJS('[data-clipboard-target]')
+
 export default {
   components: {
     CartLogo
