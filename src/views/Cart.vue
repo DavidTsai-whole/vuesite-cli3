@@ -98,16 +98,14 @@
             <h2 class="noMerch font-weight-bold">您目前並沒有選擇任何商品喔!</h2>
 
             <div class="link d-flex justify-content-around mb-5">
-              <a class="h3 cartin font-weight-bold" href="#/product"
-                ><i class="fas fa-arrow-circle-left"></i>前往購物</a
-              >
               <a class="h3 cartin font-weight-bold" href="#/"
                 ><i class="fas fa-home"></i>回首頁</a
               >
+              <a class="h3 cartin font-weight-bold" href="#/product"
+                ><i class="fas fa-arrow-circle-left"></i>前往購物</a
+              >
             </div>
           </div>
-
-          .
 
           <div class="mt-5" v-if="totoaPrice > 0">
             <div class="d-flex justify-content-around mt-5">
