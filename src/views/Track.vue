@@ -9,25 +9,23 @@
             <i class="far fa-grin-hearts text-danger"></i>追蹤名單
           </h2>
           <table class="table table-borderless bg-dark1">
-            <thead class="bg-dark">
-              <tr>
-                <th>商品名稱</th>
-                <th>商品種類</th>
-                <th>商品價錢</th>
-                <th>加入購物車</th>
+            <thead class="smth bg-dark">
+              <tr class="text-center">
+                <th width="30%">商品名稱</th>
+                <th width="23%">商品價錢</th>
+                <th width="25%">加入購物車</th>
                 <th>取消追蹤</th>
               </tr>
             </thead>
             <tbody>
-              <tr class="trBorder" v-for="item in FollowProduct" :key="item.id">
+              <tr class="borderBot text-center" v-for="item in FollowProduct" :key="item.id">
                 <td>{{ item.title }}</td>
-                <td>{{ item.category }}</td>
-                <td>NT$ {{ item.price }}</td>
+                <td>NT${{ item.price }}</td>
                 <td class="tdAddCart" @click="addcart(item)">
-                  <i class="fas fa-shopping-cart fa-2x text-white1"></i>
+                  <i class="fas fa-cart-plus fa-2x text-white1"></i>
                 </td>
                 <td class="tdDelTrack">
-                  <i class="fas fa-trash text-danger fa-2x" @click="deletee(item.id)"></i>
+                  <i class="far fa-trash-alt text-danger fa-2x" @click="deletee(item.id)"></i>
                 </td>
               </tr>
             </tbody>
@@ -270,8 +268,23 @@ export default {
   }
 }
 @media (max-width: 567px) {
+  .smth th{
+    font-size:12px;
+  }
+  .fa-trash-alt{
+    font-size:10px;
+  }
+  .borderBot{
+    font-size:10px;
+  }
  .trackFail {
    font-size:25px;
+ }
+ .cartin {
+  font-size:20px;
+}
+ .fa-cart-plus {
+   font-size:10px;
  }
 }
 </style>
