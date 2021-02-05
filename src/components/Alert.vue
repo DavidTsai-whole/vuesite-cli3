@@ -100,10 +100,10 @@ export default {
 }
 @media (max-width: 576px) {
   .message-alert {
-    left: 56%;
+    left: 48%;
   }
   .alert {
-    font-size: 15px;
+    font-size: 13px;
   }
 }
 </style>

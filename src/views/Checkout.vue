@@ -61,7 +61,7 @@
                 />
                 <div class="input-group-append">
                   <button
-                    class="btn btn-dark1"
+                    class="btn btn-dark1 btn-sm"
                     v-if="allcart.total !== 0"
                     type="button"
                     id="button-addon2"
@@ -76,7 +76,7 @@
                 :class="{ 'd-none': hide }"
                 v-if="allcart.total !== 0"
               >
-                <thead class="thead-dark">
+                <thead class="smth thead-dark">
                   <th class="text-center">品名</th>
                   <th class="text-center">圖片</th>
                   <th class="text-center">數量</th>
@@ -100,51 +100,51 @@
                 </tbody>
                 <tfoot>
                   <tr>
-                    <td colspan="4" v-if="allcart.total >= 1000" class="text-right">
+                    <td colspan="4" v-if="allcart.total >= 1000" class="text-right free">
                       (滿1000免運)
                     </td>
                   </tr>
 
                   <tr>
-                    <td colspan="3" class="text-right">小計:</td>
-                    <td class="text-right">${{ allcart.total }}</td>
+                    <td colspan="3" class="text-right free">小計:</td>
+                    <td class="text-right free">${{ allcart.total }}</td>
                   </tr>
 
                   <tr class="tableBorder">
-                    <td colspan="3" class="text-right">運費:</td>
+                    <td colspan="3" class="text-right free ">運費:</td>
                     <td
                       v-if="allcart.total >= 1000 || allcart.total === 0"
-                      class="text-right"
+                      class="text-right free"
                     >
                       $0
                     </td>
-                    <td v-else class="text-right">$60</td>
+                    <td v-else class="text-right free">$60</td>
                   </tr>
 
                   <tr>
-                    <td colspan="3" class="text-right h3">總計:</td>
+                    <td colspan="3" class="text-right totalPrice">總計:</td>
                     <td
                       v-if="allcart.total >= 1000 || allcart.total === 0"
-                      class="h3 text-right"
+                      class="totalPrice text-right"
                     >
                       ${{ allcart.total }}
                     </td>
-                    <td v-else class="h3 text-right">${{ allcart.total + 60 }}</td>
+                    <td v-else class="totalPrice text-right">${{ allcart.total + 60 }}</td>
                   </tr>
 
                   <tr
                     v-if="allcart.total !== allcart.final_total && allcart.total < 1000"
                   >
-                    <td colspan="3" class="text-right h3 text-success">折扣價:</td>
-                    <td class="h3 text-right text-success">
+                    <td colspan="3" class="text-right totalPrice text-success">折扣價:</td>
+                    <td class="totalPrice text-right text-success">
                       ${{ Math.round(allcart.final_total + 60) }}
                     </td>
                   </tr>
                   <tr
                     v-if="allcart.total !== allcart.final_total && allcart.total >= 1000"
                   >
-                    <td colspan="3" class="text-right h3 text-success">折扣價:</td>
-                    <td class="h3 text-right text-success">
+                    <td colspan="3" class="text-right totalPrice text-success">折扣價:</td>
+                    <td class="totalPrice text-right text-success">
                       ${{ Math.round(allcart.final_total) }}
                     </td>
                   </tr>
@@ -179,7 +179,7 @@
                 </validation-provider>
                 <validation-provider
                   class="form-group"
-                  rules="required|min:3"
+                  rules="required"
                   v-slot="{ errors, classes }"
                 >
                   <!-- 輸入框 -->
@@ -291,6 +291,12 @@
   height: 70px;
   width: 70px;
 }
+.totalPrice{
+  font-size:20px;
+}
+.free{
+  font-size:15px;
+}
 .topLogo1 {
   font-size: 25px;
   height: 60px;
@@ -333,6 +339,28 @@
     padding-top: 17px;
   }
 }
+@media(max-width:567px){
+   .inputCoupon{
+    font-size:13px;
+  }
+  .smth th{
+    font-size:12px;
+  }
+  .borderBot{
+    font-size:10px;
+  }
+  .checkImg{
+    height: 43px;
+    width: 43px;
+  }
+  .totalPrice{
+    font-size:14px;
+  }
+  .free{
+  font-size:10px;
+}
+}
+
 </style>
 <script>
 import CartLogo from '@/components/CartLogo'

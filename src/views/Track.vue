@@ -34,7 +34,7 @@
           </table>
         </div>
         <div class="col-md-8" v-else>
-          <h2 class="text-center text-dark1 mb-5 font-weight-bold">
+          <h2 class="trackFail text-center text-dark1 mb-5 font-weight-bold">
             <i class="far fa-sad-tear text-danger"></i>目前還沒有追蹤任何商品哦!
           </h2>
           <div class="text-center mb-5 pt-5">
@@ -268,5 +268,10 @@ export default {
     height: 300px;
     width: 300px;
   }
+}
+@media (max-width: 567px) {
+ .trackFail {
+   font-size:25px;
+ }
 }
 </style>

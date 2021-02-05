@@ -146,10 +146,11 @@
       <!--營業時間-->
       <div class="mt-3 openTime">
         <div class="openHour">
-          <h5 class="text-white">
-            營業時間: <span class="day">一 ~ 六</span
-            ><span class="day"> 9:00 ~ 23:00</span>
+          <h5 class="text-white font-weight-bold">
+            營業時間
           </h5>
+          <p class="text-white font-weight-bold">周一 ~ 周六</p>
+          <p class="text-white font-weight-bold">AM9:00 ~ PM11:00</p>
         </div>
       </div>
     </div>
@@ -259,7 +260,7 @@
 }
 .openHour {
   position: absolute;
-  top: 90%;
+  top: 50%;
   left: 60%;
 }
 .modal-body h5 {
@@ -300,11 +301,6 @@
   .subP {
     font-size: 13px;
   }
-  .openHour {
-    position: absolute;
-    top: 90%;
-    left: 60%;
-  }
   .openHour h5 {
     font-size: 19px;
   }
@@ -334,12 +330,6 @@
     height: 300px;
     width: 300px;
   }
-  .openHour h5 {
-    font-size: 15px;
-  }
-  .openHour span {
-    font-size: 12px;
-  }
   .meal {
     margin-bottom: 70px;
   }
@@ -352,12 +342,33 @@
   .main {
     height: 350px;
   }
+  .openTime {
+    height:300px
+  }
   .banner {
     left: 15%;
     right: 15%;
   }
   .banner h1 {
     font-size: 18px;
+  }
+  .openHour {
+    left: 63%;
+  }
+  .openHour p{
+    font-size:13px
+  }
+}
+@media (max-width: 376px) {
+  .main {
+    height: 300px;
+  }
+  .banner {
+    left: 15%;
+    right: 15%;
+  }
+  .banner h1 {
+    font-size: 14px;
   }
 }
 </style>

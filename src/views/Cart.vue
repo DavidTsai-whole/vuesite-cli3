@@ -215,6 +215,12 @@
   .free{
   font-size:10px;
 }
+.cartin {
+  font-size:20px;
+}
+.noMerch {
+  font-size:25px
+}
 }
 </style>
 <script>
@@ -256,7 +262,7 @@ export default {
       item.qty += 1
       localStorage.setItem('cartData', JSON.stringify(vm.cartData))
       vm.getTotalPr()
-      vm.$bus.$emit('message:push', '以更新商品數量', 'light')
+      vm.$bus.$emit('message:push', '已更新商品數量', 'light')
     },
     lessQty (item) {
       const vm = this
