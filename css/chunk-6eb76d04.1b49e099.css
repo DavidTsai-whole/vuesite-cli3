@@ -1,0 +1,1 @@
+.cartlogo{right:40px;bottom:100px;z-index:100;position:fixed}.top:hover{cursor:pointer}.logocart{width:64px;height:64px;border-radius:50%;background:#21232d}.number{position:absolute;background:red;width:20px;height:20px;top:2px;right:-5px;border-radius:50%}@media (max-width:768px){.top{display:none}.cartlogo{right:10px}}
