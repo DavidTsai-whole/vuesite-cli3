@@ -13,7 +13,7 @@
 <style>
 .cartlogo {
   right: 40px;
-  bottom: 200px;
+  bottom: 100px;
   z-index: 100;
   position: fixed;
 }

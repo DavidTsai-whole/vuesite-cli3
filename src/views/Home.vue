@@ -175,7 +175,6 @@
               code123<i
                 class="far fa-copy ml-3"
                 data-clipboard-target="#code123"
-                id="copy"
                 @click.prevent="copy"
               ></i>
             </h5>
@@ -203,7 +202,6 @@
 .banner {
   position: absolute;
   padding: 40px;
-  background: #dcd9cb;
   background: hsla(0, 0%, 100%, 0.4);
   margin-top: 15%;
   text-align: center;

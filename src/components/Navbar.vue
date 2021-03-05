@@ -15,7 +15,7 @@
       </ul>
       <a href="#" class="rwdMenu" @click.prevent="showmenu"
         ><i class="fas fa-bars fa-3x"></i
-      ></a>
+      ><i class="fas fa-times fa-3x"></i></a>
     </div>
   </div>
 </template>
@@ -78,6 +78,9 @@
   .rwdMenu {
     display: block;
   }
+  .fa-times{
+  display:none;
+}
   .menu li:hover {
     background: white;
   }
@@ -91,8 +94,10 @@ export default {
     goHome () {
       this.$router.push('/')
     },
-    showmenu () {
+    showmenu (e) {
       $('body').toggleClass('menu-show')
+      $('.fa-bars').toggle()
+      $('.fa-times').toggle()
     }
   }
 }

@@ -16,7 +16,6 @@
 <script>
 
 // eslint-disable-next-line no-unused-vars
-import $ from 'jquery'
 import Navbar from '@/components/Navbar.vue'
 import Footer from '@/components/Footer'
 import Alert from '@/components/Alert'

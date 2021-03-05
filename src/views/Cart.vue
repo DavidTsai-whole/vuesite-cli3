@@ -241,6 +241,7 @@ export default {
       const api = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_MEPATH}/cart`
       vm.$http.get(api).then((response) => {
         vm.allcart = response.data.data.carts
+        console.log(vm.allcart)
       })
     },
     deleteCartData (id) {
